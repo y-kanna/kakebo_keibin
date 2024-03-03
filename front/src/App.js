@@ -1,7 +1,6 @@
 // import axios from "axios";
 import React from "react";
 import Header from "./Header"
-import TemporaryDrawer from "./Drawer"
 
 // const baseURL = "http://localhost:8000";
 
@@ -33,7 +32,6 @@ export default function App() {
       {/* <h1>{post.title}</h1>
       <p>{post.body}</p> */}
       {/* <button>Create Post</button> */}
-      <TemporaryDrawer/>
     </div>
   );
 }

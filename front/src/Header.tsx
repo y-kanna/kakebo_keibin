@@ -1,12 +1,15 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import Drawer from './Drawer.tsx'
+import React from 'react';
 
 export default function Header() {
+  const [open, setOpen] = React.useState<boolean>(false)
+
   return (
     <Box sx={{ flexGrow: 1}}>
       <AppBar sx={{ boxShadow: "none"}}position="static">
@@ -17,6 +20,7 @@ export default function Header() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={() => setOpen(true)}
           >
             <MenuIcon />
           </IconButton>
@@ -25,6 +29,8 @@ export default function Header() {
           </Typography>
         </Toolbar>
       </AppBar>
+      <Drawer open={open} setOpen={setOpen}  />
     </Box>
   );
 }
+
